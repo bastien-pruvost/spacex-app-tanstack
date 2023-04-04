@@ -33,13 +33,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Format code
-        run: pnpm format
+        run: pnpm format:check
 
       - name: Lint code
         run: pnpm lint
 
       - name: Check types
-        run: pnpm check-types
+        run: pnpm types:check
 
       - name: Build app
         run: pnpm build && rm -rf dist
