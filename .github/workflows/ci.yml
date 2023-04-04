@@ -1,0 +1,39 @@
+name: SpaceX App CI
+run-name: ${{ github.actor }} is running CI GitHub Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format-lint-check-types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Format code
+        run: pnpm format
+
+      - name: Lint code
+        run: pnpm lint
+
+      - name: Check types
+        run: pnpm check-types
+
+      - name: Build app
+        run: pnpm build && rm -rf dist
