@@ -53,21 +53,22 @@ Much longer description of the project -->
 - Live previews
 - Fullscreen mode
 - ~Cross platform~
-- ~Light/dark mode toggle~ 
+- ~Light/dark mode toggle~
 
 
-## Note on something  
+## Note on something
 
-> **info**  
+> **info**
 > This project is using Next.js 13.2
 
-> **warning**  
+> **warning**
 > This project is using Next.js 13.2 -->
 
 
 ## Tech Stack
 
 - Vite
+- Typescript
 - React
 - Sass
 - Tanstack Query
